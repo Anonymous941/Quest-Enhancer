@@ -72,7 +72,7 @@ class MainHook : IXposedHookLoadPackage {
             XC_MethodReplacement.returnConstant(true)
         )
 
-        //                    when (key) {
+//                    when (key) {
 //                        "oculus_systemux:oculus_sysux_app_lock_settings_section", "oculus_systemux:aui_show_unknown_sources_in_dynamic_app_bar", "oculus_systemux:oculus_gls", "oculus_systemux:oculus_avalanche", "oculus_systemux:oculus_avalanche_gaming_infra_enabled", "oculus_casting:capture_settings_section", "oculus_systemux:oculus_sysux_aui_bar_customization", "oculus_systemux:oculus_sysux_aui_bar_customization_drag", "oculus_systemux:oculus_mobile_settings_app_library_section", "oculus_systemux:oculus_ax_setting_controller_settings_calibration", "oculus_systemux:oculus_ax_setting_controller_settings_up_angle", "oculus_shared_core:is_trusted_user", "oculus_systemux:oculus_mobile_settings_use_test_environments", "oculus_systemux:oculus_mobile_swap_controller_thumbsticks", "oculus_systemux:oc_timeedit", "oculus_systemux:quest_expanded_toast_buttons", "oculus_systemux:oculus_settings_idle_shutdown_enabled", "oculus_systemux:oculus_configurable_mtp_dialog", "oculus_systemux:oculus_mobile_hand2_override", "oculus_systemux:oculus_mobile_enable_hand_emulation_of_controllers", "oculus_systemux:oculus_mobile_boost_your_height", "oculus_systemux:oculus_mobile_double_tap_hand_autotransition", "oculus_systemux:oculus_guardian_room_capture", "oculus_systemux:oculus_intrusion_detection", "oculus_systemux:assistant_exclusive_mic_hack", "oculus_systemux:xros_audio_assist_desk_mode", "oculus_systemux:assistant_oculus_doubletap_setting", "oculus_systemux:assistant_oculus_response_setting" -> {
 //                            param.setResult(true)
 //                        }
@@ -494,7 +494,7 @@ class MainHook : IXposedHookLoadPackage {
             "oculus_casting:camera_panel_take_photo_icon_enabled",
             "oculus_systemux:oculus_controllers_key_mapping",
             "oculus_systemux:oculus_vrshell_remote_tracked_keyboard_setting",
-            "oculus_systemux:oculus_guardian_room_capture", // TODO: investigate this
+            "oculus_systemux:oculus_guardian_room_capture",
             "oculus_systemux:oculus_settings_help_center",
             "oculus_systemux:oculus_quick_settings_oculus_move_toggle",
             "oculus_notifications:vr_auto_dnd",
@@ -504,7 +504,10 @@ class MainHook : IXposedHookLoadPackage {
             "oculus_systemshell:parsu_enable_horizon_vr_settings",
             "oculus_systemux:oculus_vrshell_direct_interaction_enabled",
             "oculus_systemux:oculus_quick_settings_display_mode_switch_button",
-            "oculus_systemux:oculus_vrshell_physical_keyboard_layout_settings"
+            "oculus_systemux:oculus_vrshell_physical_keyboard_layout_settings",
+            "oculus_systemux_phone_notifications:feed_tab_enabled",
+            "oculus_systemux:oculus_quest_profile_sharing",
+            "oculus_guardian:oculus_guardian_reality_tuner_slider"
         )
         private val SYSTEMUX_OPTIONS = mapOf(
             "oculus_systemux:assistant_on_oculus" to true, // TODO: MAKE THIS CONFIGURABLE IN CASE PEOPLE DON'T WANT THE ASSISTANT
@@ -553,6 +556,10 @@ class MainHook : IXposedHookLoadPackage {
             "oculus_shared_social:oculus_parties_enable_auto_mic_mixing" to false,
             "oculus_systemux:oculus_systemux_library_show_unknown_sources_for_copresence" to true, // allows you to choose unknown sources for coprescense
             "oculus_shared_core:is_trusted_user" to true, // WARNING!  SENDS IS EMPLOYEE ON TELEMETRY!  also make configurable whether the internal thing shows up on the dock
+            "oculus_systemux:oculus_party_per_person_mute" to true,
+            "oculus_systemux:oculus_sysux_phone_notifs_iconography" to true, // shows custom icons for phone notifications
+            "arvr_social_identity:simile_follow_request_banner_enabled" to true,
+            "oculus_shared_social:simile_social_blocking_upsell" to false
             // misc
 //            "oculus_social_platform_deviceconfig:oc_ask_to_join" to true,
 //            "oculus_social_platform_deviceconfig:messenger_vr_disable_static_reply" to false,
